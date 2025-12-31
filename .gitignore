@@ -182,3 +182,14 @@ hive-mind-prompt-*.txt
 .claude-flow/
 docs
 memory
+
+/openmetadata-1.10.0-SNAPSHOT/*
+*.csv
+
+=
+exporting
+naming
+writing
+*execute-migrate-all*
+data_contract*.yaml
+*debug.json

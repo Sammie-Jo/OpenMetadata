@@ -126,6 +126,8 @@ export interface DatabaseConnection {
  *
  * MongoDB Connection Config
  *
+ * ArangoDB Connection Config
+ *
  * Cassandra Connection Config
  *
  * Couchbase Connection Config
@@ -224,6 +226,9 @@ export interface ConfigObject {
      * Host and port of the MongoDB service when using the `mongodb` connection scheme. Only
      * host when using the `mongodb+srv` scheme.
      *
+     * Host and port of the ArangoDB service when using the `Arangodb` connection scheme. Only
+     * host when using the `arangodb+srv` scheme.
+     *
      * Host and port of the Cassandra service when using the `cassandra` connection scheme. Only
      * host when using the `cassandra+srv` scheme.
      *
@@ -255,6 +260,8 @@ export interface ConfigObject {
      * SQLAlchemy driver scheme options.
      *
      * Mongo connection scheme options.
+     *
+     * Arango connection scheme options.
      *
      * Couchbase driver scheme options.
      */
@@ -413,6 +420,8 @@ export interface ConfigObject {
      *
      * Password to connect to MongoDB.
      *
+     * Password to connect to ArangoDB.
+     *
      * Password to connect to Couchbase.
      *
      * Password to connect to Doris.
@@ -494,6 +503,9 @@ export interface ConfigObject {
      *
      * Username to connect to MongoDB. This user should have privileges to read all the metadata
      * in MongoDB.
+     *
+     * Username to connect to ArangoDB. This user should have privileges to read all the metadata
+     * in ArangoDB.
      *
      * Username to connect to Cassandra. This user should have privileges to read all the
      * metadata in Cassandra.
@@ -1966,6 +1978,8 @@ export interface OracleConnectionType {
  *
  * Mongo connection scheme options.
  *
+ * Arango connection scheme options.
+ *
  * Couchbase driver scheme options.
  */
 export enum ConfigScheme {
@@ -1989,6 +2003,7 @@ export enum ConfigScheme {
     Impala4 = "impala4",
     Mongodb = "mongodb",
     MongodbSrv = "mongodb+srv",
+    Arangodb = "arangodb",
     MssqlPymssql = "mssql+pymssql",
     MssqlPyodbc = "mssql+pyodbc",
     MssqlPytds = "mssql+pytds",
@@ -2062,6 +2077,7 @@ export enum ConfigType {
     Impala = "Impala",
     MariaDB = "MariaDB",
     MongoDB = "MongoDB",
+    ArangoDB = "ArangoDB",
     Mssql = "Mssql",
     Mysql = "Mysql",
     Oracle = "Oracle",
@@ -2185,6 +2201,7 @@ export enum DatabaseServiceType {
     Impala = "Impala",
     MariaDB = "MariaDB",
     MongoDB = "MongoDB",
+    ArangoDB = "ArangoDB",
     Mssql = "Mssql",
     Mysql = "Mysql",
     Oracle = "Oracle",

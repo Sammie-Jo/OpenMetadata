@@ -50,6 +50,7 @@
         "Dbt",
         "SapHana",
         "MongoDB",
+        "ArangoDB",
         "Cassandra",
         "Couchbase",
         "Greenplum",
@@ -171,6 +172,9 @@
         },
         {
           "name": "MongoDB"
+        },
+        {
+          "name": "ArangoDB"
         },
         {
           "name": "Cassandra"
@@ -327,6 +331,9 @@
             },
             {
               "$ref": "./connections/database/mongoDBConnection.json"
+            },
+            {
+              "$ref": "./connections/database/arangoDBConnection.json"
             },
             {
               "$ref": "./connections/database/cassandraConnection.json"

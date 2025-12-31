@@ -22,6 +22,7 @@ import { COMMON_UI_SCHEMA } from '../constants/Services.constant';
 import { OperationPermission } from '../context/PermissionProvider/PermissionProvider.interface';
 import { EntityType } from '../enums/entity.enum';
 import { DatabaseServiceType } from '../generated/entity/services/databaseService';
+import arangoDBConnection from '../jsons/connectionSchemas/connections/database/arangoDBConnection.json';
 import athenaConnection from '../jsons/connectionSchemas/connections/database/athenaConnection.json';
 import azureSQLConnection from '../jsons/connectionSchemas/connections/database/azureSQLConnection.json';
 import bigQueryConnection from '../jsons/connectionSchemas/connections/database/bigQueryConnection.json';
@@ -253,6 +254,11 @@ export const getDatabaseConfig = (type: DatabaseServiceType) => {
     }
     case DatabaseServiceType.MongoDB: {
       schema = mongoDBConnection;
+
+      break;
+    }
+    case DatabaseServiceType.ArangoDB: {
+      schema = arangoDBConnection;
 
       break;
     }

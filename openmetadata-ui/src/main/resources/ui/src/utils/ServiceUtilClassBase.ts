@@ -30,6 +30,7 @@ import {
   ALATIONSINK,
   AMAZON_S3,
   AMUNDSEN,
+  ARANGODB,
   ATHENA,
   ATLAS,
   AZURESQL,
@@ -484,6 +485,9 @@ class ServiceUtilClassBase {
 
       case this.DatabaseServiceTypeSmallCase.MongoDB:
         return MONGODB;
+
+      case this.DatabaseServiceTypeSmallCase.ArangoDB:
+        return ARANGODB;
 
       case this.DatabaseServiceTypeSmallCase.Cassandra:
         return CASSANDRA;

@@ -94,6 +94,7 @@ export enum FormattedDatabaseServiceType {
   Impala = 'Impala',
   MariaDB = 'Maria DB',
   MongoDB = 'Mongo DB',
+  ArangoDB = 'Arango DB',
   Mssql = 'MS SQL',
   Mysql = 'MySQL',
   Oracle = 'Oracle',

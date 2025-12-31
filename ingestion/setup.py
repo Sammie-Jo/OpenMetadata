@@ -54,6 +54,7 @@ VERSIONS = {
     "tableau": "tableauserverclient==0.25",  # higher versions require urllib3>2.0 which conflicts other libs
     "pyhive": "pyhive[hive_pure_sasl]~=0.7",
     "mongo": "pymongo~=4.3",
+    "arangodb": "pyarango",
     "redshift": "sqlalchemy-redshift==0.8.12",
     "snowflake": "snowflake-sqlalchemy~=1.4",
     "elasticsearch8": "elasticsearch8~=8.9.0",
@@ -304,6 +305,7 @@ plugins: Dict[str, Set[str]] = {
     },
     "mlflow": {"mlflow-skinny~=2.22.0"},
     "mongo": {VERSIONS["mongo"], VERSIONS["pandas"], VERSIONS["numpy"]},
+    "arangodb": {VERSIONS["arangodb"]},
     "cassandra": {VERSIONS["cassandra"]},
     "couchbase": {"couchbase~=4.1"},
     "mssql": {
@@ -425,6 +427,8 @@ test = {
     VERSIONS["tableau"],
     VERSIONS["pyhive"],
     VERSIONS["mongo"],
+    VERSIONS["arangodb"],
+    # "arango",
     VERSIONS["cassandra"],
     VERSIONS["redshift"],
     VERSIONS["snowflake"],

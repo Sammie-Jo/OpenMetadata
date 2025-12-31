@@ -52,7 +52,7 @@
         "unmatched": 0,
         "updated": 0
       },
-      "testFilePath": "/Users/shaileshparmar/Desktop/deuex/openmetadata-collate/OpenMetadata/openmetadata-ui/src/main/resources/ui/src/components/Database/Profiler/DataObservability/DataObservabilityTab.test.tsx",
+      "testFilePath": "/home/sam/TO99_catalog/OpenMetadata-forked/OpenMetadata/openmetadata-ui/src/main/resources/ui/src/components/Database/Profiler/DataObservability/DataObservabilityTab.test.tsx",
       "testResults": [
         {
           "ancestorTitles": [
@@ -625,8 +625,7 @@
           "title": "should have accessible tabs"
         },
         {
-          "ancestorTitles": [
-            "DataObservabilityTab",
+          "ancestorTitles": ["DataObservabilityTab",
             "Accessibility"
           ],
           "duration": 2,

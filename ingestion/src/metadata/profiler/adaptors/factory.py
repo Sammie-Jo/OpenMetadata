@@ -19,8 +19,12 @@ from metadata.generated.schema.entity.services.connections.database.dynamoDBConn
 from metadata.generated.schema.entity.services.connections.database.mongoDBConnection import (
     MongoDBConnection,
 )
+from metadata.generated.schema.entity.services.connections.database.arangoDBConnection import (
+    ArangoDBConnection,
+)
 from metadata.profiler.adaptors.dynamodb import DynamoDB
 from metadata.profiler.adaptors.mongodb import MongoDB
+from metadata.profiler.adaptors.arangodb import ArangoDB
 from metadata.profiler.adaptors.nosql_adaptor import NoSQLAdaptor
 from metadata.profiler.factory import Factory
 
@@ -71,6 +75,7 @@ class NoSQLAdaptorFactory(Factory):
 factory = NoSQLAdaptorFactory()
 adaptors = {
     MongoDBConnection.__name__: MongoDB,
+    ArangoDBConnection.__name__: ArangoDB,
     DynamoDBConnection.__name__: DynamoDB,
 }
 factory.register_many(adaptors)

@@ -1,0 +1,98 @@
+{
+    "$id": "https://open-metadata.org/schema/entity/services/connections/database/arangoDBConnection.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ArangoDBConnection",
+    "description": "ArangoDB Connection Config",
+    "type": "object",
+    "javaType": "org.openmetadata.schema.services.connections.database.ArangoDBConnection",
+    "definitions": {
+        "arangoDBType": {
+            "description": "Service type.",
+            "type": "string",
+            "enum": [
+                "ArangoDB"
+            ],
+            "default": "ArangoDB"
+        },
+        "arangoDBScheme": {
+            "description": "Arango connection scheme options.",
+            "type": "string",
+            "enum": [
+                "arangodb",
+                "arangodb+srv"
+            ],
+            "default": "arangodb"
+        }
+
+    },
+    "properties": {
+        "type": {
+            "title": "Service Type",
+            "description": "Service Type",
+            "$ref": "#/definitions/arangoDBType",
+            "default": "ArangoDB"
+        },
+        "scheme": {
+            "title": "Connection Scheme",
+            "description": "Arango connection scheme options.",
+            "$ref": "#/definitions/arangoDBScheme",
+            "default": "arangodb"
+        },
+        "username": {
+            "title": "Username",
+            "description": "Username to connect to ArangoDB. This user should have privileges to read all the metadata in ArangoDB.",
+            "type": "string"
+        },
+        "password": {
+            "title": "Password",
+            "description": "Password to connect to ArangoDB.",
+            "type": "string",
+            "format": "password"
+        },
+        "hostPort": {
+            "title": "Host and Port",
+            "description": "Host and port of the ArangoDB service when using the `arangodb` connection scheme. Only host when using the `arangodb+srv` scheme.",
+            "type": "string"
+        },
+        "connectionOptions": {
+            "title": "Connection Options",
+            "$ref": "../connectionBasicType.json#/definitions/connectionOptions"
+        },
+        "databaseName": {
+            "title": "Database Name",
+            "description": "Optional name to give to the database in OpenMetadata. If left blank, we will use default as the database name.",
+            "type": "string"
+        },
+        "schemaFilterPattern":{
+            "title": "Default Schema Filter Pattern",
+            "description": "Regex to only include/exclude schemas that matches the pattern.",
+            "$ref": "../../../../type/filterPattern.json#/definitions/filterPattern"
+        },
+          "tableFilterPattern": {
+            "title": "Default Table Filter Pattern",
+            "description": "Regex to only include/exclude tables that matches the pattern.",
+            "$ref": "../../../../type/filterPattern.json#/definitions/filterPattern"
+        },
+          "databaseFilterPattern": {
+            "title": "Default Database Filter Pattern",
+            "description": "Regex to only include/exclude databases that matches the pattern.",
+            "$ref": "../../../../type/filterPattern.json#/definitions/filterPattern"
+        },
+        "supportsMetadataExtraction": {
+            "title": "Supports Metadata Extraction",
+            "$ref": "../connectionBasicType.json#/definitions/supportsMetadataExtraction"
+        },
+        "supportsProfiler": {
+            "title": "Supports Profiler",
+            "$ref": "../connectionBasicType.json#/definitions/supportsProfiler"
+        },
+        "sslMode": {
+            "$ref": "../../../../security/ssl/verifySSLConfig.json#/definitions/sslMode"
+        },
+        "sslConfig": {
+            "$ref": "../../../../security/ssl/verifySSLConfig.json#/definitions/sslConfig"
+        }
+    },
+    "required": ["hostPort"],
+    "additionalProperties": false
+}
